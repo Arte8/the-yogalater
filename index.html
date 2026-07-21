@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOGAlater</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="hero-card" aria-labelledby="app-title">
+      <h1 id="app-title">YOGAlater</h1>
+      <p>
+        Evaluate a decision using ten practical criteria.<br>
+        A score of <strong>10</strong> or higher is required for approval.
+      </p>
+      <button id="startButton" class="primary-button" type="button">
+        Start Assessment
+      </button>
+    </section>
+  </main>
+
+  <div id="criteriaModal" class="modal" role="dialog" aria-modal="true"
+       aria-labelledby="criteriaTitle" hidden>
+    <div class="modal-panel assessment-panel">
+      <div class="modal-header">
+        <h2 id="criteriaTitle">Decision Assessment</h2>
+        <p>Answer Yes or No for every criterion.</p>
+      </div>
+
+      <form id="assessmentForm">
+        <div id="criteriaList" class="criteria-list"></div>
+
+        <div id="formWarning" class="warning" role="alert" hidden></div>
+
+        <div class="modal-actions">
+          <button id="cancelButton" class="secondary-button" type="button">
+            Cancel
+          </button>
+          <button class="primary-button" type="submit">
+            Submit Assessment
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="resultsModal" class="modal" role="dialog" aria-modal="true"
+       aria-labelledby="resultsTitle" hidden>
+    <div class="modal-panel results-panel">
+      <h2 id="resultsTitle">Assessment Results</h2>
+
+      <p id="scoreText" class="score-text"></p>
+      <p id="statusText" class="status-text"></p>
+      <p id="explanationText" class="explanation-text"></p>
+
+      <section class="failed-section">
+        <h3>This does not or is not the following</h3>
+        <div id="failedCriteria" class="failed-list"></div>
+      </section>
+
+      <div class="modal-actions centered">
+        <button id="closeResultsButton" class="primary-button" type="button">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
